@@ -1,9 +1,8 @@
 import * as sequelizeStatic from 'sequelize';
 import {DBConfig, DB_CONFIG} from '../orm/config';
-import { UserInstance, UserModel} from '../orm/table-models/attributes/user.attributes';
+import { UserModel} from '../orm/table-models/attributes/user.attributes';
 import {userModel} from '../orm/table-models/user.table-model';
-import Bluebird = require('bluebird');
-import {DeckModel} from '../orm/table-models/attributes/deck.attributes';
+import {DeckInstance, DeckModel} from '../orm/table-models/attributes/deck.attributes';
 import {CardModel} from '../orm/table-models/attributes/card.attributes';
 import {deckModel} from '../orm/table-models/deck.table-model';
 import {cardModel} from '../orm/table-models/card.table-model';
@@ -66,14 +65,17 @@ export class StoreManager implements StoreManager {
 	public async updateCreateUser(userData) {
 		const findResponses = await this.User.findAll({where: {googleId: userData.googleId}});
 		if (findResponses.length > 0) {
-			const updated = await findResponses[0].update(userData, {where: {googleId: userData.googleId}});
-				console.log('updated 71 \n', updated);
+			return await findResponses[0].update(userData, {where: {googleId: userData.googleId}});
 		} else {
 			return await this.User.create(userData);
 		}
 	}
 
-	public async updateCreateCard(cardData, deckId) {
+	public async createCard(cardData) {
+		return await this.Card.create(cardData);
+	}
+
+	public async updateCard(cardData) {
 		const findResponses = await this.Card.findAll({where: {id: cardData.id}});
 		if (findResponses.length > 0) {
 			return await this.Card.update(cardData, {where: {id: cardData.id}});
@@ -82,13 +84,35 @@ export class StoreManager implements StoreManager {
 		}
 	}
 
-	public async updateCreateDeck(deckData) {
+	public async createDeck(deckData) {
+		return this.Deck.create(deckData);
+	}
+
+	public async updateDeck(deckData) {
+		console.log('deckData \n', deckData);
 		const findResponses = await this.Deck.findAll({where: {id: deckData.id}});
+		console.log('Find Response \n', findResponses);
 		if (findResponses.length > 0) {
 			return await this.Deck.update(deckData, {where: {id: deckData.id}});
-		} else {
-			return await this.Deck.create(deckData);
 		}
+	}
+
+	public async getDecks(): Promise<DeckInstance[]> {
+		return this.Deck.findAll();
+	}
+
+	public async getDeckByProp(prop: {[key: string]:any}): Promise<DeckInstance[]> {
+		return this.Deck
+			.findAll(
+				{
+					where: {
+						[Object.keys(prop)[0]]: prop[Object.keys(prop)[0]]
+					}
+			});
+	}
+
+	public async getDeckById(deckId): Promise<DeckInstance> {
+		return await this.Deck.findById(deckId, {include: [this.Card]})
 	}
 
 	public async getUserByGoogleId(googleId) {

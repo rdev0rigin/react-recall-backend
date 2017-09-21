@@ -12,7 +12,7 @@ export class RecallBackend {
 	private internalServer = require('http').createServer(this.express);
 	private internalIO: SocketIO.Server = new IO(this.internalServer);
 	private StoreManager = new StoreManager();
-	private DeckManager = new DeckManager();
+	private DeckManager;
 	private UserManager;
 	private ChannelManager;
 
@@ -27,6 +27,7 @@ export class RecallBackend {
 
 	private init(): void {
 	this.UserManager = new UserManager(this.StoreManager);
+	this.DeckManager = new DeckManager(this.StoreManager);
 		this.internalIO.on('connection', socket => {
 			this.ChannelManager = new ChannelManager(socket, this.UserManager, this.DeckManager).openChannels();
 	});

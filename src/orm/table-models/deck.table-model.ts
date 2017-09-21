@@ -6,11 +6,16 @@ export function deckModel(DataTypes, sequelize) {
 			defaultValue: DataTypes.UUIDV4,
 		},
 		title: {
-			unique: 'compositeIndex',
 			type: DataTypes.STRING,
 			required: true,
 		},
 		description: {
+			type: DataTypes.TEXT,
+		},
+		authorId: {
+			type: DataTypes.TEXT,
+		},
+		authorName: {
 			type: DataTypes.TEXT,
 		}
 	},{

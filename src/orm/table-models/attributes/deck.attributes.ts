@@ -4,6 +4,8 @@ export interface DeckAttributes {
 	id?: string;
 	title?: string;
 	description?: string;
+	authorName?: string;
+	authorId?: string;
 	created_at?: string;
 	updated_at?: string;
 	deleted_at?: string;
