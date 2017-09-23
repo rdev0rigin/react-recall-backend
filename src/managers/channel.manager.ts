@@ -17,10 +17,8 @@ export class ChannelManager  {
 			});
 
 			this.io.on('USER_SIGNED_IN', payload => {
-				console.log('payload', payload);
 				this.userManager.signInUser(payload.userData)
 					.then((res: any) => {
-						console.log(res);
 						this.io.emit('USER_SIGNED_IN.response', res);
 					});
 			});
@@ -28,7 +26,6 @@ export class ChannelManager  {
 			this.io.on('CREATE_DECK', payload => {
 				this.deckManager.newDeck(payload.deckData)
 					.then((res: any) => {
-						console.log(res);
 						this.io.emit('CREATE_DECK.response', res);
 					});
 			});
@@ -39,6 +36,14 @@ export class ChannelManager  {
 						this.io.emit('GET_DECKS.response', res);
 					});
 			});
+
+			this.io.on('SAVE_DECK', payload => {
+				console.log('Save Deck \n', payload);
+				this.deckManager.saveDeck(payload.deckData)
+					.then(res => {
+						this.io.emit('SAVE_DECK.response', res);
+					})
+			})
 
 		// this.io.on('session_auth:socket_io_room_create', payload => {
 		// 	console.log('global payload\n', payload);

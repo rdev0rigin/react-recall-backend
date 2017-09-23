@@ -2,6 +2,8 @@
 import {CardAttributes, CardInstance} from '../orm/table-models/attributes/card.attributes';
 import {StoreManager} from './store.manager';
 import {DeckInstance} from '../orm/table-models/attributes/deck.attributes';
+import {async} from 'rxjs/scheduler/async';
+import {isUndefined} from 'util';
 
 export interface FlashCardDeck {
 	cards: CardAttributes[];
@@ -33,11 +35,36 @@ export class DeckManager {
 								deckId: deckInstance.id
 							});
 					}
-					const newDeck = await this.storeManager.getDeckById(deckInstance.id);
-					return newDeck;
+					return await this.storeManager.getDeckById(deckInstance.id);
 			})
 			.catch(err => console.log('newDeck error', err));
 		return deck;
+	}
+
+	public async saveDeck(deckData): Promise<any> {
+		const deckValues = {
+			id: deckData.id,
+			title: deckData.title,
+			description: deckData.description,
+			authorName: deckData.authorName,
+			authorId: deckData.authorId,
+		};
+		return this.storeManager.updateDeck(deckValues)
+			.then(async (deckInstance: any) => {
+				for (let card of deckData.cards){
+					if(!isUndefined(card.id)) {
+						await this.storeManager.updateCard(card);
+					} else {
+						console.log('Deck Instance \n', deckData.cards);
+						await this.storeManager.createCard(
+							{
+								...card,
+								deckId: deckInstance.id
+							});
+					}
+				}
+				return this.storeManager.getDeckById(deckInstance.id);
+			});
 	}
 
 	public async getAllDecks() {

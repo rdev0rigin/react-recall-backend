@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="317034db-7682-41b6-b016-aa1233dcc1ca" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/rdev.sql3" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rdev.sql3" afterPath="$PROJECT_DIR$/rdev.sql3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundle/backend.js" afterPath="$PROJECT_DIR$/bundle/backend.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bundle/main.map" afterPath="$PROJECT_DIR$/bundle/main.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.ts" afterPath="$PROJECT_DIR$/src/main.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/managers/channel.manager.ts" afterPath="$PROJECT_DIR$/src/managers/channel.manager.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/managers/deck.manager.ts" afterPath="$PROJECT_DIR$/src/managers/deck.manager.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/managers/store.manager.ts" afterPath="$PROJECT_DIR$/src/managers/store.manager.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/orm/table-models/attributes/deck.attributes.ts" afterPath="$PROJECT_DIR$/src/orm/table-models/attributes/deck.attributes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/orm/table-models/deck.table-model.ts" afterPath="$PROJECT_DIR$/src/orm/table-models/deck.table-model.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6103782">
+    <splitter split-orientation="horizontal" split-proportion="0.47639182">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="user.manager.ts" pinned="false" current-in-tab="false">
@@ -40,8 +37,8 @@
           <file leaf-file-name="store.manager.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/managers/store.manager.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="224">
-                  <caret line="104" column="24" lean-forward="true" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
+                <state relative-caret-position="208">
+                  <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#45#0" expanded="true" />
                   </folding>
@@ -49,32 +46,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
+          <file leaf-file-name="channel.manager.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/managers/channel.manager.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="score-card.attributes.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/orm/table-models/attributes/score-card.attributes.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="83" lean-forward="false" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="83" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="user.attributes.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/orm/table-models/attributes/user.attributes.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-                  <folding />
+                <state relative-caret-position="119">
+                  <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#1#44#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -113,23 +92,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="channel.manager.ts" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/managers/channel.manager.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="269">
-                  <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#1#44#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="deck.manager.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="deck.manager.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/managers/deck.manager.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="190">
-                  <caret line="32" column="55" lean-forward="true" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+                <state relative-caret-position="306">
+                  <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
                   <folding>
                     <element signature="e#1#93#0" expanded="true" />
                   </folding>
@@ -140,34 +107,15 @@
           <file leaf-file-name="backend.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bundle/backend.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1023">
-                  <caret line="607" column="25" lean-forward="false" selection-start-line="607" selection-start-column="25" selection-end-line="607" selection-end-column="25" />
+                <state relative-caret-position="993">
+                  <caret line="605" column="25" lean-forward="false" selection-start-line="605" selection-start-column="25" selection-end-line="605" selection-end-column="25" />
                   <folding>
-                    <marker date="1506034547000" expanded="true" signature="2404:37005" ph="[...]" />
-                    <marker date="1506034547000" expanded="true" signature="4435:10975" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="7191:10975" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="10958:10975" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36539:36549" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36539:36576" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36539:36625" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36618:36623" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36628:36636" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36637:36642" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36670:36720" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36713:36718" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36723:36731" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36732:36737" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36765:36810" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36803:36808" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36813:36821" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36822:36827" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36855:36903" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36896:36901" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36906:36914" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36915:36920" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36948:36993" ph="{...}" />
-                    <marker date="1506034547000" expanded="true" signature="36986:36991" ph="/*...*/" />
-                    <marker date="1506034547000" expanded="true" signature="36995:37003" ph="/*...*/" />
+                    <marker date="1506129137000" expanded="true" signature="2404:39322" ph="[...]" />
+                    <marker date="1506129137000" expanded="true" signature="39228:39231" ph="/*...*/" />
+                    <marker date="1506129137000" expanded="true" signature="39232:39237" ph="/*...*/" />
+                    <marker date="1506129137000" expanded="true" signature="39265:39310" ph="{...}" />
+                    <marker date="1506129137000" expanded="true" signature="39303:39308" ph="/*...*/" />
+                    <marker date="1506129137000" expanded="true" signature="39312:39320" ph="/*...*/" />
                   </folding>
                 </state>
               </provider>
@@ -176,8 +124,8 @@
           <file leaf-file-name="deck.attributes.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/orm/table-models/attributes/deck.attributes.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+                <state relative-caret-position="195">
+                  <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -247,9 +195,9 @@
         <option value="$PROJECT_DIR$/src/orm/table-models/attributes/card.attributes.ts" />
         <option value="$PROJECT_DIR$/bundle/backend.js" />
         <option value="$PROJECT_DIR$/src/orm/table-models/deck.table-model.ts" />
-        <option value="$PROJECT_DIR$/src/managers/deck.manager.ts" />
-        <option value="$PROJECT_DIR$/src/managers/store.manager.ts" />
         <option value="$PROJECT_DIR$/src/managers/channel.manager.ts" />
+        <option value="$PROJECT_DIR$/src/managers/store.manager.ts" />
+        <option value="$PROJECT_DIR$/src/managers/deck.manager.ts" />
       </list>
     </option>
   </component>
@@ -376,12 +324,12 @@
       <option name="presentableId" value="Default" />
       <updated>1505743204813</updated>
       <workItem from="1505743205964" duration="8796000" />
-      <workItem from="1505867932769" duration="17586000" />
+      <workItem from="1505867932769" duration="23559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26382000" />
+    <option name="totallyTimeSpent" value="32355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -393,7 +341,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -552,43 +500,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bundle/backend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1023">
-          <caret line="607" column="25" lean-forward="false" selection-start-line="607" selection-start-column="25" selection-end-line="607" selection-end-column="25" />
+        <state relative-caret-position="993">
+          <caret line="605" column="25" lean-forward="false" selection-start-line="605" selection-start-column="25" selection-end-line="605" selection-end-column="25" />
           <folding>
-            <marker date="1506034547000" expanded="true" signature="2404:37005" ph="[...]" />
-            <marker date="1506034547000" expanded="true" signature="4435:10975" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="7191:10975" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="10958:10975" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36539:36549" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36539:36576" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36539:36625" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36618:36623" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36628:36636" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36637:36642" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36670:36720" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36713:36718" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36723:36731" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36732:36737" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36765:36810" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36803:36808" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36813:36821" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36822:36827" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36855:36903" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36896:36901" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36906:36914" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36915:36920" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36948:36993" ph="{...}" />
-            <marker date="1506034547000" expanded="true" signature="36986:36991" ph="/*...*/" />
-            <marker date="1506034547000" expanded="true" signature="36995:37003" ph="/*...*/" />
+            <marker date="1506129137000" expanded="true" signature="2404:39322" ph="[...]" />
+            <marker date="1506129137000" expanded="true" signature="39228:39231" ph="/*...*/" />
+            <marker date="1506129137000" expanded="true" signature="39232:39237" ph="/*...*/" />
+            <marker date="1506129137000" expanded="true" signature="39265:39310" ph="{...}" />
+            <marker date="1506129137000" expanded="true" signature="39303:39308" ph="/*...*/" />
+            <marker date="1506129137000" expanded="true" signature="39312:39320" ph="/*...*/" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/orm/table-models/attributes/deck.attributes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,6 +517,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/orm/table-models/attributes/deck.attributes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -608,10 +537,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/managers/channel.manager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/managers/deck.manager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="32" column="55" lean-forward="true" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
+        <state relative-caret-position="306">
+          <caret line="62" column="28" lean-forward="false" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
           <folding>
             <element signature="e#1#93#0" expanded="true" />
           </folding>
@@ -620,20 +559,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/managers/store.manager.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="104" column="24" lean-forward="true" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
+        <state relative-caret-position="208">
+          <caret line="95" column="17" lean-forward="true" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/managers/channel.manager.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#44#0" expanded="true" />
           </folding>
         </state>
       </provider>

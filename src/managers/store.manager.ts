@@ -76,12 +76,14 @@ export class StoreManager implements StoreManager {
 	}
 
 	public async updateCard(cardData) {
-		const findResponses = await this.Card.findAll({where: {id: cardData.id}});
-		if (findResponses.length > 0) {
-			return await this.Card.update(cardData, {where: {id: cardData.id}});
-		} else {
-			return await this.Card.create(cardData);
-		}
+		return await this.Card.update(
+			cardData,
+			{
+				where: {
+					id: cardData.id
+				}
+			}
+		);
 	}
 
 	public async createDeck(deckData) {
@@ -93,12 +95,14 @@ export class StoreManager implements StoreManager {
 		const findResponses = await this.Deck.findAll({where: {id: deckData.id}});
 		console.log('Find Response \n', findResponses);
 		if (findResponses.length > 0) {
-			return await this.Deck.update(deckData, {where: {id: deckData.id}});
+			return await findResponses[0].update(deckData);
+		} else {
+			console.log('deck not found');
 		}
 	}
 
 	public async getDecks(): Promise<DeckInstance[]> {
-		return this.Deck.findAll();
+		return this.Deck.findAll({include:[this.Card]});
 	}
 
 	public async getDeckByProp(prop: {[key: string]:any}): Promise<DeckInstance[]> {

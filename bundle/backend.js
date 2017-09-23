@@ -95,12 +95,12 @@ var store_manager_1 = __webpack_require__(3);
 var user_manager_1 = __webpack_require__(10);
 var channel_manager_1 = __webpack_require__(11);
 var deck_manager_1 = __webpack_require__(12);
-var IO = __webpack_require__(13);
-var cors = __webpack_require__(14);
+var IO = __webpack_require__(14);
+var cors = __webpack_require__(15);
 var RecallBackend = /** @class */ (function () {
     function RecallBackend() {
-        this.express = __webpack_require__(15)();
-        this.internalServer = __webpack_require__(16).createServer(this.express);
+        this.express = __webpack_require__(16)();
+        this.internalServer = __webpack_require__(17).createServer(this.express);
         this.internalIO = new IO(this.internalServer);
         this.StoreManager = new store_manager_1.StoreManager();
         this.init();
@@ -247,17 +247,14 @@ var StoreManager = /** @class */ (function () {
     };
     StoreManager.prototype.updateCard = function (cardData) {
         return __awaiter(this, void 0, void 0, function () {
-            var findResponses;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.Card.findAll({ where: { id: cardData.id } })];
-                    case 1:
-                        findResponses = _a.sent();
-                        if (!(findResponses.length > 0)) return [3 /*break*/, 3];
-                        return [4 /*yield*/, this.Card.update(cardData, { where: { id: cardData.id } })];
-                    case 2: return [2 /*return*/, _a.sent()];
-                    case 3: return [4 /*yield*/, this.Card.create(cardData)];
-                    case 4: return [2 /*return*/, _a.sent()];
+                    case 0: return [4 /*yield*/, this.Card.update(cardData, {
+                            where: {
+                                id: cardData.id
+                            }
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
                 }
             });
         });
@@ -281,9 +278,12 @@ var StoreManager = /** @class */ (function () {
                         findResponses = _a.sent();
                         console.log('Find Response \n', findResponses);
                         if (!(findResponses.length > 0)) return [3 /*break*/, 3];
-                        return [4 /*yield*/, this.Deck.update(deckData, { where: { id: deckData.id } })];
+                        return [4 /*yield*/, findResponses[0].update(deckData)];
                     case 2: return [2 /*return*/, _a.sent()];
-                    case 3: return [2 /*return*/];
+                    case 3:
+                        console.log('deck not found');
+                        _a.label = 4;
+                    case 4: return [2 /*return*/];
                 }
             });
         });
@@ -291,7 +291,7 @@ var StoreManager = /** @class */ (function () {
     StoreManager.prototype.getDecks = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2 /*return*/, this.Deck.findAll()];
+                return [2 /*return*/, this.Deck.findAll({ include: [this.Card] })];
             });
         });
     };
@@ -596,17 +596,14 @@ var ChannelManager = /** @class */ (function () {
                 _this.io.emit('TEST.response', 'TEST SUCCESS');
             });
             _this.io.on('USER_SIGNED_IN', function (payload) {
-                console.log('payload', payload);
                 _this.userManager.signInUser(payload.userData)
                     .then(function (res) {
-                    console.log(res);
                     _this.io.emit('USER_SIGNED_IN.response', res);
                 });
             });
             _this.io.on('CREATE_DECK', function (payload) {
                 _this.deckManager.newDeck(payload.deckData)
                     .then(function (res) {
-                    console.log(res);
                     _this.io.emit('CREATE_DECK.response', res);
                 });
             });
@@ -614,6 +611,13 @@ var ChannelManager = /** @class */ (function () {
                 _this.deckManager.getAllDecks()
                     .then(function (res) {
                     _this.io.emit('GET_DECKS.response', res);
+                });
+            });
+            _this.io.on('SAVE_DECK', function (payload) {
+                console.log('Save Deck \n', payload);
+                _this.deckManager.saveDeck(payload.deckData)
+                    .then(function (res) {
+                    _this.io.emit('SAVE_DECK.response', res);
                 });
             });
             // this.io.on('session_auth:socket_io_room_create', payload => {
@@ -829,6 +833,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var util_1 = __webpack_require__(13);
 var DeckManager = /** @class */ (function () {
     function DeckManager(storeManager) {
         this.storeManager = storeManager;
@@ -842,7 +847,7 @@ var DeckManager = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.storeManager
                             .createDeck(deckData)
                             .then(function (deckInstance) { return __awaiter(_this, void 0, void 0, function () {
-                            var _i, _a, card, newDeck;
+                            var _i, _a, card;
                             return __generator(this, function (_b) {
                                 switch (_b.label) {
                                     case 0:
@@ -859,9 +864,7 @@ var DeckManager = /** @class */ (function () {
                                         _i++;
                                         return [3 /*break*/, 1];
                                     case 4: return [4 /*yield*/, this.storeManager.getDeckById(deckInstance.id)];
-                                    case 5:
-                                        newDeck = _b.sent();
-                                        return [2 /*return*/, newDeck];
+                                    case 5: return [2 /*return*/, _b.sent()];
                                 }
                             });
                         }); })
@@ -870,6 +873,50 @@ var DeckManager = /** @class */ (function () {
                         deck = _a.sent();
                         return [2 /*return*/, deck];
                 }
+            });
+        });
+    };
+    DeckManager.prototype.saveDeck = function (deckData) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var deckValues;
+            return __generator(this, function (_a) {
+                deckValues = {
+                    id: deckData.id,
+                    title: deckData.title,
+                    description: deckData.description,
+                    authorName: deckData.authorName,
+                    authorId: deckData.authorId,
+                };
+                return [2 /*return*/, this.storeManager.updateDeck(deckValues)
+                        .then(function (deckInstance) { return __awaiter(_this, void 0, void 0, function () {
+                        var _i, _a, card;
+                        return __generator(this, function (_b) {
+                            switch (_b.label) {
+                                case 0:
+                                    _i = 0, _a = deckData.cards;
+                                    _b.label = 1;
+                                case 1:
+                                    if (!(_i < _a.length)) return [3 /*break*/, 6];
+                                    card = _a[_i];
+                                    if (!!util_1.isUndefined(card.id)) return [3 /*break*/, 3];
+                                    return [4 /*yield*/, this.storeManager.updateCard(card)];
+                                case 2:
+                                    _b.sent();
+                                    return [3 /*break*/, 5];
+                                case 3:
+                                    console.log('Deck Instance \n', deckData.cards);
+                                    return [4 /*yield*/, this.storeManager.createCard(__assign({}, card, { deckId: deckInstance.id }))];
+                                case 4:
+                                    _b.sent();
+                                    _b.label = 5;
+                                case 5:
+                                    _i++;
+                                    return [3 /*break*/, 1];
+                                case 6: return [2 /*return*/, this.storeManager.getDeckById(deckInstance.id)];
+                            }
+                        });
+                    }); })];
             });
         });
     };
@@ -902,22 +949,28 @@ exports.DeckManager = DeckManager;
 /* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("socket.io");
+module.exports = require("util");
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
-module.exports = require("cors");
+module.exports = require("socket.io");
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = require("express");
+module.exports = require("cors");
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("express");
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports) {
 
 module.exports = require("http");
