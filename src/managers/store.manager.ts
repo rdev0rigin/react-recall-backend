@@ -1,6 +1,6 @@
 import * as sequelizeStatic from 'sequelize';
 import {DBConfig, DB_CONFIG} from '../orm/config';
-import { UserModel} from '../orm/table-models/attributes/user.attributes';
+import {UserModel} from '../orm/table-models/attributes/user.attributes';
 import {userModel} from '../orm/table-models/user.table-model';
 import {DeckInstance, DeckModel} from '../orm/table-models/attributes/deck.attributes';
 import {CardModel} from '../orm/table-models/attributes/card.attributes';
@@ -123,102 +123,4 @@ export class StoreManager implements StoreManager {
 
 	}
 
-
-	// public async updateCreateLocalCredentials(props:{[key: string]: any}, userId ?: string): Bluebird<boolean>{
-	// 	if(!props && !userId){
-	// 		return false;
-	// 	}
-	// 	const localInstance = await this.LocalUser
-	// 		.findAll({
-	// 			where: {
-	// 				ownerId: userId
-	// 			}
-	// 		});
-	// 	if (localInstance.length > 0) {
-	// 		const updatedInstance = await localInstance[0]
-	// 			.update(props, {
-	// 				where: {
-	// 					ownerId: userId
-	// 				}
-	// 			});
-	// 		if (updatedInstance) {
-	// 			return true;
-	// 		}
-	// 		const localUser = await this.LocalUser
-	// 			.create({
-	// 				...props,
-	// 				ownerId: userId
-	// 			});
-	// 		return !!localUser;
-	// 	}
-	// }
-	//
-	// public async getUsersInfo(props: { [key: string]: any }): Bluebird<UserInstance[]> {
-	// 	return await this.User
-	// 		.findAll({
-	// 			where: {...props},
-	// 	});
-	// }
-	//
-	// public async updateCreateGoogleCredentials(props, userId): Bluebird<boolean> {
-	// 	if(!props && !userId){
-	// 		return false;
-	// 	}
-	// 	const googleInstance = await this.GoogleUser
-	// 		.findAll({
-	// 			where: {
-	// 				ownerId: userId
-	// 			}
-	// 		});
-	// 	if (googleInstance.length > 0) {
-	// 		const updatedInstance = await googleInstance[0]
-	// 			.update(props, {
-	// 				where: {
-	// 					ownerId: userId
-	// 				}
-	// 		});
-	// 		if (updatedInstance) {
-	// 			return true;
-	// 		}
-	// 		const googleUser = await this.GoogleUser
-	// 			.create({
-	// 				...props,
-	// 				ownerId: userId
-	// 		});
-	// 		return !!googleUser;
-	// 	}
-	// }
-	//
-	// public async getLocalInfoBy(props): Bluebird<LocalInstance[]> {
-	// 	return await this.LocalUser
-	// 		.findAll({where: {...props}})
-	// }
-	// public async getGoogleInfo(props): Bluebird<GoogleInstance[]> {
-	// 	return await this.GoogleUser
-	// 		.findAll({where: {...props}})
-	// }
-	//
-	// public async createLocal(props): Bluebird<LocalInstance> {
-	// 	return await this.LocalUser.create(props);
-	// }
-	//
-	// public async createUser(props): Bluebird<UserInstance> {
-	// 	console.log('create', props);
-	//
-	// 	return await this.User
-	// 		.create(props).catch(err => {
-	// 			console.log(err);
-	// 			return err;
-	// 		});
-	//
-	// }
-	//
-	// public updateUser(props, user_id): Bluebird<boolean> {
-	// 	return this.User.update(props,{where: {id: user_id}})
-	// 		.then((userInstance: [number, UserInstance[]])=> {
-	// 			if (userInstance[0] > 0) {
-	// 				return true
-	// 			}
-	// 		});
-	// }
 }

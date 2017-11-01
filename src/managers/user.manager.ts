@@ -1,4 +1,3 @@
-
 import {StoreManager} from './store.manager';
 
 export class UserManager {
@@ -8,7 +7,6 @@ export class UserManager {
 	){}
 
 	public async signInUser(userData){
-			console.log('signInUser called');
 		const response = await this.storeManager.updateCreateUser(userData);
 		return response;
 	}

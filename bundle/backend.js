@@ -560,9 +560,7 @@ var UserManager = /** @class */ (function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log('signInUser called');
-                        return [4 /*yield*/, this.storeManager.updateCreateUser(userData)];
+                    case 0: return [4 /*yield*/, this.storeManager.updateCreateUser(userData)];
                     case 1:
                         response = _a.sent();
                         return [2 /*return*/, response];

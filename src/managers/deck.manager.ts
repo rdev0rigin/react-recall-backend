@@ -1,8 +1,7 @@
 
-import {CardAttributes, CardInstance} from '../orm/table-models/attributes/card.attributes';
+import {CardAttributes} from '../orm/table-models/attributes/card.attributes';
 import {StoreManager} from './store.manager';
 import {DeckInstance} from '../orm/table-models/attributes/deck.attributes';
-import {async} from 'rxjs/scheduler/async';
 import {isUndefined} from 'util';
 
 export interface FlashCardDeck {
